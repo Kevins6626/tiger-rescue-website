@@ -1,0 +1,45 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import ArtifactsWidget from '~/components/widgets/ArtifactsWidget.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Artifacts | Tiger Rescue 2: Electric Boogaloo',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: getPermalink('/') },
+        { text: 'About', href: getPermalink('/#about') },
+        { text: 'Team Roles', href: getPermalink('/#roles') },
+        { text: 'Sponsor', href: getPermalink('/#sponsor') },
+        { text: 'Time Tracking', href: getPermalink('/#timetracking') },
+        { text: 'Artifacts', href: getPermalink('/artifacts') },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+    <!-- Hero2 Widget ******************* -->
+
+    <!-- <Hero
+        id="hero"
+        title="Tiger Rescue"
+        tagline="RIT SWEN Senior Project (Fall 2025 - Spring 2026)"
+        class:list={'h-[1000px]'}
+        actions={[{ variant: 'primary', text: 'Learn more', href: getPermalink('/#about') }]}
+    >
+        <Fragment slot="subtitle"> Saving dogs one flight at a time. </Fragment>
+    </Hero> -->
+
+    
+
+  <ArtifactsWidget />
+</Layout>
