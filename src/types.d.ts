@@ -219,6 +219,13 @@ export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' |
   image?: string | unknown;
 }
 
+export interface TigerRescueHero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' | 'classes'> {
+  content?: string;
+  actions?: string | CallToAction[];
+  image?: string | unknown;
+  videoSrc?: string;
+}
+
 export interface Team extends Omit<Headline, 'classes'>, Widget {
   team?: Array<TeamMember>;
 }
