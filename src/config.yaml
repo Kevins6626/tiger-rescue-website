@@ -11,14 +11,14 @@ metadata:
   title:
     default: Tiger Rescue
     template: '%s — AstroWind'
-  description: "\U0001F42F An AR platform designed for dog rescue during flood disaster scenarios."
+  description: "\U0001F42F An AR platform for coordinated dog rescue operations in flood disaster scenarios."
   robots:
     index: true
     follow: true
   openGraph:
     site_name: Tiger Rescue
     images:
-      - url: '~/assets/images/dogrescue.gif'
+      - url: '~/assets/images/dog.jpg'
         width: 628
         height: 628
     type: website
