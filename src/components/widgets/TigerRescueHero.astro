@@ -20,17 +20,18 @@ const {
   <!-- BACKGROUND VIDEO -->
   {
     videoSrc && (
-      <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-      <video
-        autoplay
-        loop
-        muted
-        playsinline
-        preload="metadata"
-        class="absolute inset-0 w-full h-full object-cover object-top"
-      >
-        <source src={videoSrc} type="video/mp4" />
-      </video>
+<div class="absolute inset-0 overflow-hidden pointer-events-none -mt-px md:-top-[76px]" aria-hidden="true">
+  <video
+  autoplay
+  loop
+  muted
+  playsinline
+  preload="metadata"
+  class="absolute inset-0 w-full h-full object-cover block"
+  style="object-position: center 0%"
+>
+  <source src={videoSrc} type="video/mp4" />
+</video>
         <!-- gradient overlay for readability -->
         <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
       </div>
