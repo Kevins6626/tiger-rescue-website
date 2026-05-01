@@ -56,46 +56,44 @@ const {
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
-  <div class="flex flex-wrap justify-center items-center gap-8">
-    {
-      team.map(({ name, job, image, description, socials }) => (
-        <div class="flex max-w-xs flex-col items-center text-center intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
-          {image && (
-            <div class="w-40 h-40">
-              <Image
-                class="w-full h-full object-cover rounded-full mx-auto"
-                width={160}
-                height={160}
-                widths={[160, 320]}
-                layout="fixed"
-                {...image}
-              />
-            </div>
-          )}
-
-          <h3 class="text-xl font-bold mb-1">{name}</h3>
-          <p class="text-sm text-muted mb-3">{job}</p>
-          {description && <p class="text-muted text-sm mb-4">{description}</p>}
-
-          {socials && socials.length > 0 && (
-            <div class="flex gap-3">
-              {socials.map(({ icon, href, ariaLabel }) => (
-                <a
-                  href={href}
-                  class="text-muted hover:text-gray-700 dark:hover:text-gray-300 transition duration-150 ease-in-out"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={ariaLabel}
-                >
-                  <Icon name={icon} class="w-5 h-5" />
-                </a>
-              ))}
-            </div>
-          )}
-        </div>
-      ))
-    }
-  </div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+  {
+    team.map(({ name, job, image, description, socials }) => (
+      <div class="flex flex-col items-center text-center intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+        {image && (
+          <div class="w-40 h-40">
+            <Image
+              class="w-full h-full object-cover rounded-full mx-auto"
+              width={160}
+              height={160}
+              widths={[160, 320]}
+              layout="fixed"
+              {...image}
+            />
+          </div>
+        )}
+        <h3 class="text-lg font-bold mb-1 mt-3">{name}</h3>
+        <p class="text-sm text-muted mb-3">{job}</p>
+        {description && <p class="text-muted text-sm mb-4">{description}</p>}
+        {socials && socials.length > 0 && (
+          <div class="flex gap-3">
+            {socials.map(({ icon, href, ariaLabel }) => (
+              <a
+                href={href}
+                class="text-muted hover:text-gray-700 dark:hover:text-gray-300 transition duration-150 ease-in-out"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={ariaLabel}
+              >
+                <Icon name={icon} class="w-5 h-5" />
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    ))
+  }
+</div>
 
   {
     callToAction && (
