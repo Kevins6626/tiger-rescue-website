@@ -126,7 +126,7 @@ export const footerData = {
   links: [],
   socialLinks: [],
   secondaryLinks: [
-    { text: 'RIT SE Department', href: "https://www.rit.edu/computing/department-software-engineering" },
-    { text: 'BAE Systems', href: "https://www.baesystems.com/en/" },
+    { text: 'RIT SE Department', href: 'https://www.rit.edu/computing/department-software-engineering' },
+    { text: 'BAE Systems', href: 'https://www.baesystems.com/en/' },
   ],
 };
