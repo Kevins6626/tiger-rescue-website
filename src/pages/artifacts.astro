@@ -7,7 +7,7 @@ import Content from '~/components/widgets/Content.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Artifacts | Tiger Rescue 2: Electric Boogaloo',
+  title: 'Artifacts | Tiger Rescue',
 };
 ---
 
@@ -20,7 +20,7 @@ const metadata = {
         { text: 'Team Roles', href: getPermalink('/#roles') },
         { text: 'Sponsor', href: getPermalink('/#sponsor') },
         { text: 'Time Tracking', href: getPermalink('/#timetracking') },
-        { text: 'Artifacts', href: getPermalink('/artifacts') },
+        { text: 'Artifacts', href: '' },
       ]}
       isSticky
       showToggleTheme
@@ -41,5 +41,7 @@ const metadata = {
 
     
 
-  <ArtifactsWidget />
+  <ArtifactsWidget 
+    id="artifacts"
+  />
 </Layout>

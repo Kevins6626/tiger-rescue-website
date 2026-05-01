@@ -2,21 +2,41 @@
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 
+const {
+  title = 'Artifacts',
+  id,
+} = Astro.props;
+
 const artifacts = [
   {
     title: 'Development Methodology',
-    description: 'System architecture, component design, and technical specifications for Tiger Rescue.',
-    pdf: 'public/artifacts/Development-Methodology.pdf',
+    description: 'Outlines planned project artifacts and activities, team roles and responsibilities, and the metrics and measurements used to track progress.',
+    pdf: '/artifacts/Development-Methodology.pdf',
   },
   {
-    title: 'Requirements Document',
-    description: 'Functional and non-functional requirements gathered from sponsor and stakeholder meetings.',
-    pdf: '/artifacts/requirements.pdf',
-  },
-  {
-    title: 'Sprint 1 Report',
+    title: 'Domain Model',
     description: 'Summary of Sprint 1 progress, deliverables completed, and retrospective notes.',
-    pdf: '/artifacts/sprint-1-report.pdf',
+    pdf: '/artifacts/tf_domain_model.png',
+  },
+  {
+    title: 'Tools & Techniques',
+    description: 'Summary of Sprint 1 progress, deliverables completed, and retrospective notes.',
+    pdf: '/artifacts/Synopsis_Roles_Keywords_and_Tools_Techniques.pdf',
+  },
+  {
+    title: 'Metrics & Measurements',
+    description: 'Functional and non-functional requirements gathered from sponsor and stakeholder meetings.',
+    pdf: '/artifacts/Metrics-&-Measurements.pdf',
+  },
+  {
+    title: 'Final Plan',
+    description: 'Summary of Sprint 1 progress, deliverables completed, and retrospective notes.',
+    pdf: '/artifacts/Final-Plan.pdf',
+  },
+  {
+    title: 'Pre-Flight Checklist',
+    description: 'Summary of Sprint 1 progress, deliverables completed, and retrospective notes.',
+    pdf: '/artifacts/Preflight-Checklist-and-Execution-Guide.pdf',
   },
 ];
 ---
@@ -111,9 +131,10 @@ const artifacts = [
 </style>
 
 <script lang="ts">
-  const items = document.querySelectorAll('.accordion-item');
+  function init(){
+    const items = document.querySelectorAll('.accordion-item');
 
-  items.forEach((item) => {
+    items.forEach((item) => {
     const trigger = item.querySelector('.accordion-trigger');
     const chevronBtn = item.querySelector('.accordion-chevron-btn');
     const panel = item.querySelector('.accordion-panel');
@@ -139,4 +160,7 @@ const artifacts = [
     trigger?.addEventListener('click', toggle);
     chevronBtn?.addEventListener('click', toggle);
   });
+  }
+  
+  document.addEventListener('astro:page-load', init);
 </script>
