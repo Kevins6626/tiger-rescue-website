@@ -30,7 +30,7 @@ const metadata = {
         { text: 'Team Roles', href: '#roles' },
         { text: 'Sponsor', href: '#sponsor' },
         { text: 'Time Tracking', href: '#timetracking' },
-        { text: 'Artifacts', href: '#artifacts' },
+        { text: 'Artifacts', href: getPermalink('/artifacts') },
       ]}
       isSticky
       showToggleTheme
@@ -41,7 +41,7 @@ const metadata = {
 
   <Hero
     id="hero"
-    title="Tiger Rescue 2: Electric Boogaloo"
+    title="Tiger Rescue"
     tagline="RIT SWEN Senior Project (Fall 2025 - Spring 2026)"
     class:list={'h-[1000px]'}
     actions={[{ variant: 'primary', text: 'Learn more', href: getPermalink('/#about') }]}
