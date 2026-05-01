@@ -8,7 +8,6 @@ import { getPermalink } from '~/utils/permalinks';
 import Team from '~/components/widgets/Team.astro';
 import Timetracking from '~/components/widgets/Timetracking.astro';
 
-import rescuegif from '~/assets/images/dogrescue.gif';
 import bae_building from '~/assets/images/bae_building.png';
 import default_profile from '~/assets/images/default_profile.png';
 // import aiden_k from '~/assets/images/aiden_k.png';
@@ -52,38 +51,62 @@ const metadata = {
 
   <!-- Content Widget **************** -->
 
-  <Content
-    id="about"
-    columns={3}
-    items={[]}
-    isReversed
-    image={{
-      src: rescuegif,
-      alt: 'Colorful Image',
-      loading: 'eager',
-    }}
-  >
-    <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Project Synopsis</h2>
-      <p>
-        In the aftermath of a natural disaster, search and rescue attempts can be disorganized and dangerous. Our
-        project aims to help alleviate the danger and aid in a smooth recovery. Utilizing autonomous drones, computer
-        vision, and augmented reality we will enable rescuers to automatically detect lost and abandoned dogs and relay
-        this information to offsite teams for appropriate action.
-      </p>
-      <br />
-      <p>
-        An onsite team will deploy a set of autonomous drones with a preprogrammed flight plan. These drones will then
-        actively monitor the search area, sending data back to the onsite team. This data is then displayed as an
-        augmented reality sand table view for both onsite and offsite users. Detections of stray or abandoned dogs will
-        be made automatically and integrated into the sand table view.
-      </p>
-    </Fragment>
+<div id="about" class="relative">
+  <!-- BACKGROUND -->
+  <div class="absolute inset-0 bg-blue-50 dark:opacity-5"></div>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:opacity-5"></div>
-    </Fragment>
-  </Content>
+  <div class="relative px-6 py-16 max-w-7xl mx-auto">
+    <!-- CENTERED HEADING -->
+    <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-10 text-center">
+      Project Synopsis
+    </h2>
+
+    <!-- TWO COLUMN LAYOUT -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <!-- VIDEO (left, since original was isReversed) -->
+      <div class="w-full overflow-hidden rounded-xl shadow-lg aspect-[4/3]">
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="metadata"
+          class="w-full h-full object-cover"
+        >
+          <source src="/arview.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!-- TEXT (right) -->
+      <div class="space-y-3 text-[1.12rem] leading-relaxed text-gray-700 dark:text-gray-300">
+        <p>
+          As severe weather events become more frequent, rescue operations are hindered by poor
+          visibility, hazardous environments, and limited real-time information.
+          <span class="font-semibold text-gray-900 dark:text-white">Tiger Flood Rescue</span>
+          addresses these challenges by integrating autonomous drones, computer vision (CV), and
+          augmented reality (AR) into a unified analysis platform.
+        </p>
+        <p>
+          The system collects aerial imagery from drones and processes it in real time to detect
+          points of interest, particularly
+          <span class="font-semibold text-gray-900 dark:text-white">lost or abandoned dogs</span>,
+          which are often overlooked during evacuations. Each detection is tagged with GPS
+          coordinates to assist rescue teams.
+        </p>
+        <p>
+          Results are visualized through an AR interface rendering a
+          <span class="font-semibold text-gray-900 dark:text-white">3D sand table</span> that
+          displays drone positions, flight paths, and identified targets, improving situational
+          awareness during operations.
+        </p>
+        <p>
+          By consolidating aerial data into a single interactive view, the platform enables faster,
+          more informed decision-making in high-risk environments.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- Testimonials Widget *********** -->
 
