@@ -37,6 +37,7 @@ const weeksSinceStart = Math.floor((today.getTime() - startDate.getTime()) / (7 
 const currentGid = weekGids[Math.min(weeksSinceStart, weekGids.length - 1)];
 
 const sheetUrl = `https://docs.google.com/spreadsheets/d/e/2PACX-1vQH_G6rnpdcsDY1Svu1fPdRYXJ58E731-SccKjEKwVzgYtqys4RC4y9VjiLel1i2ka_IMglx_QitThL/pubhtml#gid=${currentGid}`;
+const sheet2Url = `https://docs.google.com/spreadsheets/d/e/2PACX-1vRhLy8ruHSu42lgqzCYitViB1vkkadVVb_CmwlX7SKxbO_R8z0D3goquoSKAs7Z-xj_8UtDpY3ISqxA/pubhtml#gid=${currentGid}`;
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`}>
@@ -50,8 +51,15 @@ const sheetUrl = `https://docs.google.com/spreadsheets/d/e/2PACX-1vQH_G6rnpdcsDY
     }}
   />
   <div class="mx-auto max-w-7xl p-4 md:px-8">
-    <div class="relative h-[500px] w-full overflow-hidden rounded-lg flex justify-center items-center">
+    <h2 class="text-2xl font-bold mb-2 flex justify-center items-center">Fall Semester</h2>
+    <div class="relative w-full overflow-hidden rounded-lg flex justify-center items-center">
       <iframe src={sheetUrl} style="width: 900px; height: 500px;"></iframe>
+    </div>
+  </div>
+  <div class="mx-auto max-w-7xl p-4 md:px-8">
+    <h2 class="text-2xl font-bold mb-2 flex justify-center items-center">Spring Semester</h2>
+    <div class="relative w-full overflow-hidden rounded-lg flex justify-center items-center">
+      <iframe src={sheet2Url} style="width: 900px; height: 500px;"></iframe>
     </div>
   </div>
 </WidgetWrapper>

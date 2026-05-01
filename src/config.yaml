@@ -1,6 +1,6 @@
 site:
   name: Tiger Rescue
-  site: 'https://tiger-rescue.vercel.app'
+  site: 'https://tiger-rescue-website.vercel.app'
   base: '/'
   trailingSlash: false
 
