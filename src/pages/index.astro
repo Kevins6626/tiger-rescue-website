@@ -1,0 +1,238 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import { getPermalink } from '~/utils/permalinks';
+import Team from '~/components/widgets/Team.astro';
+import Timetracking from '~/components/widgets/Timetracking.astro';
+
+import rescuegif from '~/assets/images/dogrescue.gif';
+import bae_building from '~/assets/images/bae_building.png';
+import default_profile from '~/assets/images/default_profile.png';
+import ryan_w from '~/assets/images/ryan_w.png';
+// import aiden_k from '~/assets/images/aiden_k.png';
+import kevin_s from '~/assets/images/kevin_s.png';
+// import dan_c from '~/assets/images/dan_c.png';
+import mason_b from '~/assets/images/mason_b.png';
+
+const metadata = {
+  title: 'Tiger Rescue 2: Electric Boogaloo',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '#' },
+        { text: 'About', href: '#about' },
+        { text: 'Team Roles', href: '#roles' },
+        { text: 'Sponsor', href: '#sponsor' },
+        { text: 'Time Tracking', href: '#timetracking' },
+        { text: 'Artifacts', href: '#artifacts' },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero
+    id="hero"
+    title="Tiger Rescue 2: Electric Boogaloo"
+    tagline="RIT SWEN Senior Project (Fall 2025 - Spring 2026)"
+    class:list={'h-[1000px]'}
+    actions={[{ variant: 'primary', text: 'Learn more', href: getPermalink('/#about') }]}
+  >
+    <Fragment slot="subtitle"> Saving dogs one flight at a time. </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[]}
+    isReversed
+    image={{
+      src: rescuegif,
+      alt: 'Colorful Image',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Project Synopsis</h2>
+      <p>
+        In the aftermath of a natural disaster, search and rescue attempts can be disorganized and dangerous. Our
+        project aims to help alleviate the danger and aid in a smooth recovery. Utilizing autonomous drones, computer
+        vision, and augmented reality we will enable rescuers to automatically detect lost and abandoned dogs and relay
+        this information to offsite teams for appropriate action.
+      </p>
+      <br />
+      <p>
+        An onsite team will deploy a set of autonomous drones with a preprogrammed flight plan. These drones will then
+        actively monitor the search area, sending data back to the onsite team. This data is then displayed as an
+        augmented reality sand table view for both onsite and offsite users. Detections of stray or abandoned dogs will
+        be made automatically and integrated into the sand table view.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:opacity-5"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials Widget *********** -->
+
+  <Team
+    id="roles"
+    title="Meet the Team"
+    subtitle="Senior Project Team Roles"
+    team={[
+      {
+        name: 'Kevin S.',
+        job: 'Sponsor Communications Lead',
+        image: {
+          src: kevin_s,
+          alt: 'Kevin S. Image',
+        },
+        description:
+          'Coordinates all communications between the team and BAE sponsors and develops weekly meeting agendas and quad charts.',
+        socials: [
+          {
+            href: 'https://github.com/',
+            icon: 'tabler:brand-github',
+            ariaLabel: 'GitHub',
+          },
+          {
+            href: 'https://www.linkedin.com/',
+            icon: 'tabler:brand-linkedin',
+            ariaLabel: 'LinkedIn',
+          },
+        ],
+      },
+      {
+        name: 'Aiden K.',
+        job: 'Project Manager',
+        image: {
+          src: default_profile,
+          alt: 'Aiden K. Image',
+        },
+        description:
+          'Leads overall project strategy, facilitates team decision-making, and ensures successful delivery of both RIT requirements and project milestones.',
+
+        socials: [
+          {
+            href: 'https://github.com/',
+            icon: 'tabler:brand-github',
+            ariaLabel: 'GitHub',
+          },
+          {
+            href: 'https://www.linkedin.com/',
+            icon: 'tabler:brand-linkedin',
+            ariaLabel: 'LinkedIn',
+          },
+        ],
+      },
+      {
+        name: 'Dan C.',
+        job: 'Hardware Manager',
+        image: {
+          src: default_profile,
+          alt: 'Dan C. Image',
+        },
+        description:
+          'Oversees storage, maintenance, and procedures for our project hardware, including drones, AR devices, and laptops.',
+        socials: [
+          {
+            href: 'https://github.com/',
+            icon: 'tabler:brand-github',
+            ariaLabel: 'GitHub',
+          },
+          {
+            href: 'https://www.linkedin.com/',
+            icon: 'tabler:brand-linkedin',
+            ariaLabel: 'LinkedIn',
+          },
+        ],
+      },
+      {
+        name: 'Mason B.',
+        job: 'Methodology Lead',
+        image: {
+          src: mason_b,
+          alt: 'Mason B. Image',
+        },
+        description:
+          "Ensures adherence to established project methodologies and manages the team's workflow and progress through the Jira board.",
+        socials: [
+          {
+            href: 'https://github.com/',
+            icon: 'tabler:brand-github',
+            ariaLabel: 'GitHub',
+          },
+          {
+            href: 'https://www.linkedin.com/',
+            icon: 'tabler:brand-linkedin',
+            ariaLabel: 'LinkedIn',
+          },
+        ],
+      },
+      {
+        name: 'Ryan W.',
+        job: 'Technical Lead',
+        image: {
+          src: ryan_w,
+          alt: 'Ryan W. Image',
+        },
+        description:
+          'Guides development in technically advanced R&D efforts and assists with determining priority of work in our backlog.',
+        socials: [
+          {
+            href: 'https://github.com/',
+            icon: 'tabler:brand-github',
+            ariaLabel: 'GitHub',
+          },
+          {
+            href: 'https://www.linkedin.com/',
+            icon: 'tabler:brand-linkedin',
+            ariaLabel: 'LinkedIn',
+          },
+        ],
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="sponsor"
+    columns={3}
+    items={[]}
+    image={{
+      src: bae_building,
+      alt: 'A building with BAE Systems logo',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Sponsor</h2>
+      <p>
+        The sponsor for our project is BAE Systems, a defense, security, and aerospace company that delivers a range of
+        products and services for air, land, and naval forces, as well as advanced electronics, security, and
+        information technology solutions.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:opacity-5"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Weekly Schedule Widget **************** -->
+  <Timetracking id="timetracking" />
+</Layout>

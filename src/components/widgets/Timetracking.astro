@@ -1,0 +1,57 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+
+const {
+  title = 'Time Tracking',
+  subtitle = "View our current week's time sheet",
+  id,
+  isDark = false,
+  classes = {},
+} = Astro.props;
+
+const weekGids = [
+  '904893745', // Week 1
+  '958305651', // Week 2
+  '1050255148', // Week 3
+  '1456392670', // Week 4
+  '1033789204', // Week 5
+  '1150167014', // Week 6
+  '1966044807', // Week 7
+  '1875671932', // Week 8
+  '2069045660', // Week 9
+  '1132383482', // Week 10
+  '1957539891', // Week 11
+  '1238808960', // Week 12
+  '1013885836', // Week 13
+  '1109987653', // Week 14
+];
+
+const startDate = new Date('2025-09-15'); // Monday, September 15, 2025
+const today = new Date();
+
+// Calculate the number of weeks since the start date
+const weeksSinceStart = Math.floor((today.getTime() - startDate.getTime()) / (7 * 24 * 60 * 60 * 1000));
+
+// Get the current week's GID (if within range, otherwise use the last week)
+const currentGid = weekGids[Math.min(weeksSinceStart, weekGids.length - 1)];
+
+const sheetUrl = `https://docs.google.com/spreadsheets/d/e/2PACX-1vQH_G6rnpdcsDY1Svu1fPdRYXJ58E731-SccKjEKwVzgYtqys4RC4y9VjiLel1i2ka_IMglx_QitThL/pubhtml#gid=${currentGid}`;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`}>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    classes={{
+      container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
+      title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
+      subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
+    }}
+  />
+  <div class="mx-auto max-w-7xl p-4 md:px-8">
+    <div class="relative h-[500px] w-full overflow-hidden rounded-lg flex justify-center items-center">
+      <iframe src={sheetUrl} style="width: 900px; height: 500px;"></iframe>
+    </div>
+  </div>
+</WidgetWrapper>

@@ -1,0 +1,49 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import Announcement from '~/components/widgets/Announcement.astro';
+
+import { headerData, footerData } from '~/navigation';
+
+import type { MetaData } from '~/types';
+
+export interface Props {
+  metadata?: MetaData;
+}
+
+const { metadata } = Astro.props;
+---
+
+<Layout metadata={metadata}>
+  <slot name="announcement">
+    <Announcement />
+  </slot>
+  <slot name="header">
+    <Header {...headerData} isSticky showRssFeed showToggleTheme />
+  </slot>
+  <main>
+    <slot />
+  </main>
+  <slot name="footer">
+    <Footer {...footerData}>
+      <Fragment slot="footnote">
+        <div class="flex flex-row justify-center items-center">
+          <span>Made with&nbsp;</span>
+          <span class="hover:animate-heartBeat px-[1px]"> ❤️ </span>
+          <span>&nbsp;by&nbsp;</span>
+          <a
+            data-label="2nPlusOne"
+            href="https://github.com/2nPlusOne"
+            target="_blank"
+            rel="noreferrer"
+            class="bold-pseudo text-center text-emerald-500 hover:font-semibold focus:font-semibold
+            hover:underline focus:underline transition-all"
+          >
+            2nPlusOne
+          </a>
+        </div>
+      </Fragment>
+    </Footer>
+  </slot>
+</Layout>
