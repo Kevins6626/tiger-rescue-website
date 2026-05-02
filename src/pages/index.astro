@@ -10,6 +10,7 @@ import Team from '~/components/widgets/Team.astro';
 import Timetracking from '~/components/widgets/Timetracking.astro';
 
 import bae_building from '~/assets/images/bae_building.png';
+import poster from '~/assets/images/poster.jpg';
 import default_profile from '~/assets/images/default_profile.png';
 import mason from '~/assets/images/Mason.png';
 import dan from '~/assets/images/Dan.png';
@@ -28,6 +29,7 @@ const metadata = {
       links={[
         { text: 'Home', href: '#' },
         { text: 'About', href: '#about' },
+        { text: 'Poster', href: '#poster' },
         { text: 'Team Roles', href: '#roles' },
         { text: 'Sponsor', href: '#sponsor' },
         { text: 'Time Tracking', href: '#timetracking' },
@@ -110,6 +112,18 @@ const metadata = {
     </div>
   </div>
 </div>
+
+<section id="poster" class="py-16 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Tiger Rescue Project Poster</h2>
+    <img
+      src={poster.src}
+      alt="Final poster"
+      loading="eager"
+      class="w-full h-auto"
+    />
+  </div>
+</section>
 
   <!-- Testimonials Widget *********** -->
 
