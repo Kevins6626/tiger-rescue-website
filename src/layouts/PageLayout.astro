@@ -27,23 +27,6 @@ const { metadata } = Astro.props;
   </main>
   <slot name="footer">
     <Footer {...footerData}>
-      <Fragment slot="footnote">
-        <div class="flex flex-row justify-center items-center">
-          <span>Made with&nbsp;</span>
-          <span class="hover:animate-heartBeat px-[1px]"> ❤️ </span>
-          <span>&nbsp;by&nbsp;</span>
-          <a
-            data-label="2nPlusOne"
-            href="https://github.com/2nPlusOne"
-            target="_blank"
-            rel="noreferrer"
-            class="bold-pseudo text-center text-emerald-500 hover:font-semibold focus:font-semibold
-            hover:underline focus:underline transition-all"
-          >
-            2nPlusOne
-          </a>
-        </div>
-      </Fragment>
     </Footer>
   </slot>
 </Layout>
